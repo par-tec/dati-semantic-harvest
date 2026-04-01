@@ -52,6 +52,7 @@ jobs:
         cat > repositories.txt << 'EOF'
         https://github.com/par-tec/dati-semantic-csv-apis/raw/refs/heads/main/assets/controlled-vocabularies/provinces/provinces.db
         https://github.com/par-tec/dati-semantic-csv-apis/raw/refs/heads/main/assets/controlled-vocabularies/ateco-2025/ateco-2025.db
+        https://github.com/EricaCandido/dati-semantic-assets/raw/refs/heads/assets/VocabolariControllati/territorial-classifications/cities/datapackages/cities/cities.db
         EOF
 
     - name: Harvest vocabularies
