@@ -22,7 +22,7 @@ on:
     - '.github/workflows/harvest.yml'
 env:
   CI: true
-  CLI_VERSION: '0.0.6'
+  CLI_VERSION: '0.0.8'
   BRANCH: harvest
 jobs:
   harvest:
@@ -31,14 +31,11 @@ jobs:
       contents: write
     steps:
     - name: Download schema_gov_it_tools.bin
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         set -e
         ARTIFACT_URL=https://github.com/par-tec/dati-semantic-csv-apis/releases/download/${{ env.CLI_VERSION }}/schema_gov_it_tools.bin
 
         curl -L \
-          -H "Authorization: Bearer ${GH_TOKEN}" \
           "${ARTIFACT_URL}" \
           -o /usr/local/bin/schema_gov_it_tools.bin
 
